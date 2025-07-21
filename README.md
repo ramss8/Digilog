@@ -2,10 +2,10 @@
 
 The Time Digit Clock is a creative and interactive analog-style clock built using HTML, CSS and JavaScript. Unlike traditional clocks, it displays the current time using animated digits positioned around the dial, where the hour, minute and second values move dynamically every second. 
 
-** Digilog Clock Preview:** 
+* **Digilog Clock Preview:** 
 ![Digilog Clock Preview](https://github.com/ramss8/Digilog/blob/main/Digilog%20Clock%20Snapshot.png)
 
-** Digilog Clock:** https://github.com/ramss8/Digilog/blob/main/Digilog%20Clock.html
+* **Digilog Clock:** https://github.com/ramss8/Digilog/blob/main/Digilog%20Clock.html
 
 **The interface includes:**
 
