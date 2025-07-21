@@ -5,7 +5,7 @@ The Time Digit Clock is a creative and interactive analog-style clock built usin
 * **Digilog Clock Preview:**
   ![Digilog Clock Preview](https://github.com/ramss8/Digilog/blob/main/Digilog%20Clock%20Snapshot.png)
 
-* **Digilog Clock:** https://github.com/ramss8/Digilog/blob/main/Digilog%20Clock.html
+* **Digilog Clock:** https://ramss8.github.io/Digilog/
 
 **The interface includes:**
 
