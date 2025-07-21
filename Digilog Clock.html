@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digilog Clock</title>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; background-color: black; color: white; }
+        .clock-container { position: relative; width: 300px; height: 300px; margin: auto; border: 3px solid rgb(255, 247, 0); border-radius: 50%; }
+        .digit { position: absolute; font-size: 14px; font-weight: bold; color: #00c8ff; }
+        .clock-number { position: absolute; font-size: 18px; font-weight: bold; transform: translate(-50%, -50%); color: white; }
+    </style>
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hour = now.getHours() % 12;
+            const minute = now.getMinutes();
+            const second = now.getSeconds();
+            const centerX = 150, centerY = 150, radius = 130;
+            
+            function generateDigits(angle, length, value, color, count) {
+                const angleRad = (Math.PI / 180) * angle;
+                let digits = '';
+                for (let i = 1; i <= count; i++) {
+                    const x = centerX + Math.cos(angleRad) * (length * i / count);
+                    const y = centerY - Math.sin(angleRad) * (length * i / count);
+                    digits += `<div class='digit' style='left: ${x}px; top: ${y}px; color: ${color};'>${value}</div>`;
+                }
+                return digits;
+            }
+            
+            let clockNumbers = '';
+            for (let i = 1; i <= 12; i++) {
+                const angle = 90 - (i * 30);
+                const angleRad = (Math.PI / 180) * angle;
+                const x = centerX + Math.cos(angleRad) * (radius - 10);
+                const y = centerY - Math.sin(angleRad) * (radius - 10);
+                clockNumbers += `<div class='clock-number' style='left: ${x}px; top: ${y}px;'>${i}</div>`;
+            }
+            
+            document.getElementById("clock-face").innerHTML =
+                clockNumbers +
+                generateDigits(90 - (hour * 30 + minute * 0.5), radius * 0.5, hour, "turquoise", 4) +
+                generateDigits(90 - (minute * 6), radius * 0.7, minute, "lightgreen", 6) +
+                generateDigits(90 - (second * 6), radius*0.75, second, "red", 5);
+        }
+        setInterval(updateClock, 1000);
+    </script>
+</head>
+<body onload="updateClock()">
+    <h1>Digilog Clock</h1>
+    <div class="clock-container" id="clock-face"></div>
+</body>
+</html>
